@@ -3,15 +3,21 @@
 <head>
     <script src="/js/script.js"></script>
     <link rel="stylesheet" href="/css/website.css">
-    <script>
-        var body = "<%= body %>";
-        var converter = body.replace(/&#34;/g, '"');
-        JSON.parse(converter);
-        test(converter);
 
-    </script>
 </head>
 <body>
+<div id="card">
 
+</div>
 </body>
+<script>
+        var body = "<%= body %>";
+        var converter = body.replace(/&#34;/g, '"');
+        converter = converter.replace(/[\t\n]/g, '');
+        converter = converter.replace(/&#39;/g, "'")
+        var data = JSON.parse(converter);
+        test(data);
+
+
+    </script>
 </html>
